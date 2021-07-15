@@ -5,7 +5,7 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 const Login = (props) => {
     
     //Even though we could grab the values of these input fields without state variables, whenever manipulable information on your webpage is uncontrolled by React, it's an opportunity for bugs to arise in your program.
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (event) => {
@@ -13,20 +13,18 @@ const Login = (props) => {
         //if (username !== " " && password !== " ") {
         fetch("http://localhost:3000/user/login", {
             method: "POST",
-            // including a  with our state information set as user
-            //If your server is expecting information in this format:  and , then the above will work. 
             body: JSON.stringify(
-                { user: { username: username, password: password } }),
+                { user: { email: email, password: password } }),
             headers: new Headers({
                 "Content-Type": "application/json"
             })
         })
             .then((res) => res.json())
             .then((data) =>
-                //takes the session token from the response and sets/passes it to the updatetoken object
+                //takes the session token from the response and passes it to the updatetoken object
             {
                 props.updateToken(data.sessionToken);
-                console.log("user logged in")
+                console.log("Bravo - you're logged in. Let's get cookin good lookin.")
             })
             .catch((error) => {
             console.log(error.message)
@@ -39,21 +37,21 @@ const Login = (props) => {
     
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Get in the Kitchen Already</h1>
             
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     
-                    <Label htmlFor="username">Username</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
-                        name="username"
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}     
+                        name="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}     
                    />
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">The Secret Sauce (Password)</Label>
                     <Input
                         name="password"
                         onChange={(e) => setPassword(e.target.value)}

@@ -3,13 +3,13 @@ import { Container, Row, Col } from 'reactstrap';
 import Signup from "./Signup"
 import Login from "./Login"
 
-const Auth = (props) => {
+const ValidateSession = (props) => {
     return (
-        <Container className="auth-container">
+        <Container>
             <Row>
                 <Col md='6'>
                     <Signup
-                        //grabbing token method from app.js
+                        //grabbing token method from App.js
                         updateToken={props.updateToken}
                     />
                 </Col>
@@ -24,4 +24,4 @@ const Auth = (props) => {
     );
 };
 
-export default Auth;
+export default ValidateSession;
