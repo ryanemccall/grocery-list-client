@@ -13,7 +13,7 @@ const Signup = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
        // if (email !== " " && password !== " ") {
-            fetch("http://localhost:3000/user/register", {
+            fetch("http://localhost:3000/user/signup", {
                 method: "POST", 
                 body: JSON.stringify(
                     { user: { email: email, password: password } }),
