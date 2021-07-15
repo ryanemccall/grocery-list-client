@@ -60,7 +60,7 @@ const Signup = (props) => {
                     value={password}/>
                 </FormGroup>
             
-                <Button type="submit"> Presto! </Button>
+                <Button type="submit"> Sign Up! </Button>
             </Form>
             </div>
     );
