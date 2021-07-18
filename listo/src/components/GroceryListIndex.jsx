@@ -5,7 +5,7 @@ import GroceryListDelete from "./GroceryListDelete";
 import GroceryListCreate from "./GroceryListCreate";
 import GroceryListGet from "./GroceryListGet";
 
-const GroceryListIndex = () => {
+const GroceryListIndex = (props) => {
     const [groceryList, setGroceryList] = useState([]);
     const [groceryListUpdate, setGroceryListUpdate] = useState({});
     
@@ -18,11 +18,19 @@ const GroceryListIndex = () => {
     return (
         <Container>
             <Row>
-                <Col md='3'>
-                    <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.sessionToken}/> 
+                <Col md='12'>
+                        <GroceryListGet token={props.token} groceryList={groceryList} /> 
                 </Col>
+            </Row>
+            <Row>
+                <Col md="12">
+                    <GroceryListCreate token={props.token} />
+                </Col>
+            </Row>
+            <Row>
+                
                 <Col md='6'>
-                    <GroceryListUpdate groceryList={groceryList} editGroceryList={editGroceryList} token={props.sessionToken}/>
+                    <GroceryListUpdate groceryList={groceryList} editGroceryList={editGroceryList} token={props.token}/>
                 </Col>
             </Row>
         </Container>

@@ -8,7 +8,7 @@ import GroceryListCreate from './components/GroceryListCreate';
 import GroceryListGet from './components/GroceryListGet';
 import GroceryListDelete from './components/GroceryListDelete';
 import GroceryListUpdate from './components/GroceryListUpdate';
-import GroceryListIndex from "./components/GroceryListIndex";
+import GroceryListIndex from './components/GroceryListIndex';
 import ValidateSession from './auth/ValidateSession';
 
 
@@ -21,6 +21,7 @@ function App() {
   
   //put session auth here because it will funnel down to all children 
   const [sessionToken, setSessionToken] = useState("");
+
   
   useEffect(() => {
  //updates sessionToken state variable if browser has saved a sessionToken in localStorage.  
@@ -73,8 +74,8 @@ function App() {
       </header>
       
       <Router>
-        <GroceryListCreate/>
-        <GroceryListGet />
+        {/* <GroceryListCreate token={sessionToken} />
+        <GroceryListGet token={sessionToken} /> */}
         <GroceryListUpdate />
         <GroceryListDelete />
       </Router>

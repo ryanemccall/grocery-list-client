@@ -12,11 +12,11 @@ const GroceryListCreate = (props) => {
             body: JSON.stringify({groceries: {ingredient: ingredient, quantity: quantity}}),
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.sessionToken}`  //May need Bearer here
+                'Authorization': `Bearer ${props.token}`  //May need Bearer here
             })
         }).then( (res) => res.json())
         .then( (groceriesData) => {
-            console.log('GROCERIES DATA '+groceriesData);
+            console.log('GROCERIES DATA ' + groceriesData);
             setIngredient('');
             setQuantity();
             props.fetchGroceryList();
@@ -25,7 +25,7 @@ const GroceryListCreate = (props) => {
 
     return (
         <>
-            {/* <h3>Need milk? (Or anything else?)</h3>
+            <h3>Need milk? (Or anything else?)</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="ingredient" />
@@ -37,7 +37,7 @@ const GroceryListCreate = (props) => {
                     <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </FormGroup>
                 <Button type="submit">Click to Submit</Button>
-            </Form> */}
+            </Form>
         </>
     )
 }
