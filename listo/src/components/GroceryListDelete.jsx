@@ -1,24 +1,24 @@
 import React from "react";
-//Where we will import from Bootstrap or Reactstrap based on the look we want
+import { Button } from "reactstrap";
 
 const GroceryListDelete = (props) => {
-    // const deleteGroceryList = (list /*Check with team for naming*/) => {
-    //     fetch(`http://localhost:3000/grocery/delete/${grocery.id}`, {
-    //         method: 'DELETE',
-    //         headers: new Headers({
-    //             'Content-Type': 'application/json',
-    //             'Authorization': `Bearer ${props.token}`
-    //         })
-    //     })
-    //     .then(() => props.fetchGroceryList())
-    // }
+//     const deleteGroceryList = (listo) => {
+//         fetch(`http://localhost:3000/grocery/delete/${grocery.id}`, {
+//             method: 'DELETE',
+//             headers: new Headers({ 
+//                 'Content-Type': 'application/json',
+//                 'Authorization': `Bearer ${props.token}`
+//             })
+//         })
+//         .then(() => props.fetchGroceryList())
+//     }
 
-    // //.map ? 
-    return (
-        <div>
-            
-        </div>
-)
+//     // //.map ? 
+//     return ( 
+//         <div>
+//             <Button color='danger' onClick={()=> {deleteGroceryList(listo)}}>Delete</Button>
+//         </div>
+// )
 };
 
 export default GroceryListDelete;

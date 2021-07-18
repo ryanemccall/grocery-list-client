@@ -25,7 +25,7 @@ const GroceryListCreate = (props) => {
 
     return (
         <>
-            {/* <h3>Need milk? (Or anything else?)</h3>
+            <h3>Need milk? (Or anything else?)</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="ingredient" />
@@ -37,7 +37,7 @@ const GroceryListCreate = (props) => {
                     <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </FormGroup>
                 <Button type="submit">Click to Submit</Button>
-            </Form> */}
+            </Form> 
         </>
     )
 }

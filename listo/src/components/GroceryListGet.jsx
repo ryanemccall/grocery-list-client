@@ -1,3 +1,5 @@
+//I DO NOT THINK WE NEED THIS FILE ANYMORE AS IT WILL EXIST IN THE GROCERYLISTINDEX FILE INSTEAD --RYAN
+
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import GroceryListCreate from './GroceryListCreate';
