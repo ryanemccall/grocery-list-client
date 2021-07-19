@@ -7,17 +7,17 @@ const GroceryListGet = (props) => {
 
 console.log(props.token);
 console.log(props);
-    const fetchGroceryList = async () => {
-        return fetch('http://localhost:3000/grocery/', {
+    const fetchGroceryList = () => {
+        return fetch('http://localhost:3000/grocery', {
             method: 'GET',
-            mode: 'no-cors',
+            // mode: 'no-cors',
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
+                // 'Access-Control-Allow-Origin': '*',
                 'Authorization': `Bearer ${props.token}`
             }),
         })
-        .then(data => data.json())
+        .then(data => data.json())     // not getting this far
         .then(results => {
             setGroceries(results);
             console.log(`RESULTS: ${results}`);
@@ -43,9 +43,9 @@ console.log(props);
 
     useEffect(() => {
         fetchGroceryList();
-    }, [props.token])
+    }, [props.token, props.groceryList])
     
-    //doesn't seem to matter if  'Bearer '+props.token  is used in the tokens below or not. Attempts to update result in a 404 at WorkoutEdit.js line 11
+
     
 
     return(

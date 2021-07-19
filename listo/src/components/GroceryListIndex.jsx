@@ -19,7 +19,7 @@ const GroceryListIndex = (props) => {
         <Container>
             <Row>
                 <Col md='12'>
-                        <GroceryListGet token={props.token} groceryList={groceryList} /> 
+                        <GroceryListGet token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI2NDA3Njk3LCJleHAiOjE2Mjc2MTcyOTd9.a1AghwHjKE0YsRqxlnn_Ch8Tk1LuuuOBqN-Cb8B45Xg" groceryList={groceryList} /> 
                 </Col>
             </Row>
             <Row>

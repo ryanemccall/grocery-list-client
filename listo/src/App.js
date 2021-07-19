@@ -38,7 +38,7 @@ function App() {
     //if token does not exists, creates a new key value pair
     localStorage.setItem("token", newToken);
     setSessionToken(newToken);
-    console.log(sessionToken);
+    console.log(`updateToken from APP.JS : ${newToken}`);
   };
 
   //removes token upon end of session
