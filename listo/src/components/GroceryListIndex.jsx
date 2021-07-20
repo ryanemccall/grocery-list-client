@@ -1,28 +1,30 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import GroceryListUpdate from "./GroceryListUpdate";
 import GroceryListDelete from "./GroceryListDelete";
 import GroceryListCreate from "./GroceryListCreate";
 import GroceryListGet from "./GroceryListGet";
 
-const GroceryListIndex = () => {
+const GroceryListIndex = (props) => {
     const [groceryList, setGroceryList] = useState([]);
-    const [groceryListUpdate, setGroceryListUpdate] = useState({});
-    
-
+    const [groceryListToUpdate, setGroceryListToUpdate] = useState({});
+   
     const editGroceryList = (listo) => {
-        setGroceryListUpdate(listo);
+        setGroceryListToUpdate(listo);
         console.log(listo);
     }
-//fetchGroceryList() will be the GET Endpoint Function
+   
     return (
         <Container>
             <Row>
-                <Col md='3'>
-                    <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.sessionToken}/> 
+                <Col md='12'>
+                    <GroceryListGet token={props.token} groceryList={groceryList} />
+                </Col>
+                <Col md='12'>
+                    <GroceryListCreate token={props.token}/> 
                 </Col>
                 <Col md='6'>
-                    <GroceryListUpdate groceryList={groceryList} editGroceryList={editGroceryList} token={props.sessionToken}/>
+                    <GroceryListUpdate groceryListToUpdate={groceryListToUpdate} token={props.token}/>
                 </Col>
             </Row>
         </Container>
