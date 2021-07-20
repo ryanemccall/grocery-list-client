@@ -6,20 +6,20 @@ const GroceryListCreate = (props) => {
     const [quantity, setQuantity] = useState();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         fetch('http://localhost:3000/grocery/', {
             method: 'POST',
-            body: JSON.stringify({groceries: {ingredient: ingredient, quantity: quantity}}),
+            body: JSON.stringify({grocery: {ingredient: ingredient, quantity: quantity}}),
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.sessionToken}`  //May need Bearer here
+                'Authorization': `Bearer ${props.token}`  //May need Bearer here
             })
         }).then( (res) => res.json())
         .then( (groceriesData) => {
             console.log('GROCERIES DATA '+groceriesData);
             setIngredient('');
             setQuantity();
-            props.fetchGroceryList();
+            //props.fetchGroceryList(); Breaks the Server
         })
     }
 
