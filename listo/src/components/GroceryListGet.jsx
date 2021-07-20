@@ -24,15 +24,19 @@ const GroceryListGet = (props) => {
 
     const groceryListMapper = () => {
         console.log(`ENTERED groceryListMapper`);
-        return groceries.map((item, index) => {
-            return(
-                <tr key={index}>
-                    <th scope="row">{item.id}</th>
-                    <td>{item.ingredient}</td>
-                    <td>{item.quantity}</td>
-                </tr>
-            )
-        })
+        if (groceries.length > 0) {
+            return groceries.map((item, index) => {
+                return (
+                    <tr key={index}>
+                        <th scope="row">{item.id}</th>
+                        <td>{item.ingredient}</td>
+                        <td>{item.quantity}</td>
+                    </tr>
+                )
+            })
+        } else {
+        console.log("There are no groceries to map")
+        }
     }
     
     useEffect(() => {

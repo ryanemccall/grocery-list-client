@@ -37,7 +37,7 @@ const Signup = (props) => {
     return (
 
 <div>
-<h1>Create an Account</h1>
+<h1>Create Account</h1>
 
    <Form onSubmit = {handleSubmit}>
                 <FormGroup>
@@ -52,16 +52,19 @@ const Signup = (props) => {
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label htmlFor="password">The Secret Sauce (Password)</Label>
+                    <Label htmlFor="password">The Secret Sauce (password)</Label>
                 <Input
                     name="password"
                     //callback functions, being called within the onChange event handlers, are called with an 'event' object as an argument.  This is default behavior to any event handler.  Digging into these event objects let us grab hold of the input data the user has typed
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}/>
                 </FormGroup>
-            
-                <Button type="submit"> Sign Up! </Button>
+             <br>
+            </br>
+                <Button type="submit"> Sign Up </Button>
             </Form>
+            <br>
+            </br>
             </div>
     );
 };

@@ -32,4 +32,3 @@ const GroceryListIndex = (props) => {
 };
 
 export default GroceryListIndex;
-

@@ -16,7 +16,7 @@ const GroceryListCreate = (props) => {
             })
         }).then( (res) => res.json())
         .then( (groceriesData) => {
-            console.log('GROCERIES DATA '+groceriesData);
+            console.log('GROCERIES DATA '+ groceriesData);
             setIngredient('');
             setQuantity();
             //props.fetchGroceryList(); Breaks the Server
@@ -29,17 +29,17 @@ const GroceryListCreate = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="ingredient" />
-                    <Input name="ingredient" value={ingredient} onChange={(e) => setIngredient(e.target.value)}/>
+                    <Input name="ingredient" value={ingredient} onChange={(e) => setIngredient(e.target.value)} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label htmlFor="quantity" />
-                    <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+                    <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
                 <Button type="submit">Click to Submit</Button>
-            </Form> 
+            </Form>
         </>
-    )
+    );
 }
 
 export default GroceryListCreate;
