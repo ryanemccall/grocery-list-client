@@ -27,7 +27,7 @@ const Signup = (props) => {
                 {
                     console.log(data);
                     props.updateToken(data.sessionToken)
-                    console.log("Molto bene. You've signed up. Let's get cookin good lookin.") })
+                    window.alert("Molto bene. You've signed up. Let's get cookin good lookin.") })
         //} else {
            // window.alert("Username and password are required.")
         //};
@@ -44,7 +44,11 @@ const Signup = (props) => {
                     
                     <Label htmlFor="email">Email</Label>
                 <Input
-                    name="email"
+                        name="email"
+                        placeholder="thenakedchef@email.com"
+                        type="email"
+                        aria-required="true"
+                        required="true"
                     //target is the target element of the event-in this case, the input
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -52,12 +56,19 @@ const Signup = (props) => {
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label htmlFor="password">The Secret Sauce (password)</Label>
-                <Input
-                    name="password"
-                    //callback functions, being called within the onChange event handlers, are called with an 'event' object as an argument.  This is default behavior to any event handler.  Digging into these event objects let us grab hold of the input data the user has typed
+                    <Label htmlFor="password">Password</Label>
+                    <Input
+                        placeholder="make it strong, spicy, and at least 6 characters"
+                        type="text"
+                        name="password"
+                        aria-required="true"
+                        required="true"
+                        minLength="6"
+                    //callback functions, being called within the onChange event handlers, are called with an 'event' object as an argument. This is default behavior to any event handler.  Digging into these event objects let us grab hold of the input data the user has typed
+                        
                     onChange={(e) => setPassword(e.target.value)}
-                    value={password}/>
+                        value={password} />
+                    
                 </FormGroup>
              <br>
             </br>

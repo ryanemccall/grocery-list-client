@@ -36,6 +36,7 @@ const GroceryListCreate = (props) => {
                     <Label htmlFor="quantity" />
                     <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
+                <br></br>
                 <Button type="submit">Click to Submit</Button>
             </Form>
         </>

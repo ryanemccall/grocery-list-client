@@ -45,22 +45,31 @@ const Login = (props) => {
                     <Label htmlFor="email">Email</Label>
                     <Input
                         name="email"
+                        placeholder="yeschef@email.com"
+                        type="email"
+                        aria-required="true"
+                        required="true"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}     
                    />
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label htmlFor="password">The Secret Sauce (Password)</Label>
+                    <Label htmlFor="password">Password</Label>
                     <Input
                         name="password"
+                        placeholder="the secret sauce"
+                        type="text"
+                        aria-required="true"
+                        required="true"
+                        minLength="6"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
                     />
                 </FormGroup>
              <br>
             </br>
-                <Button type="submit"> Login
+                <Button type="submit"> Get Cookin
                 </Button>
             </Form>
             <br>

@@ -7,10 +7,6 @@ import ValidateSession from './auth/ValidateSession';
 import GroceryListIndex from "./components/GroceryListIndex";
 import Navigation from './site/Navbar';
 
-
-//test for Ryan ========!!!!!!
-
-
 //app call
 
 function App() {
@@ -67,17 +63,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Good Food is Good Mood</p>
       </header>
-      
-    
-        
-      <Navigation clickLogout={clearToken}/>
+      <Navigation clickLogout={clearToken} />
       {userOnlyViews()}
-        
-      
-      
     </div>
   )
 };
-
 
 export default App;
