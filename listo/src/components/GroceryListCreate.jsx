@@ -25,19 +25,41 @@ const GroceryListCreate = (props) => {
 
     return (
         <>
-            <h3>Need milk? (Or anything else?)</h3>
+            <h3>Add to Grocery List</h3>
+            
+            <small className="text-muted">
+                Need milk and eggs or chocolate and red wine? Tell Listo what you need and it will populate a grocery list for you.
+            </small>
+            
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="ingredient" />
-                    <Input name="ingredient" value={ingredient} onChange={(e) => setIngredient(e.target.value)} />
+                    <Label
+                        className="form-label"
+                        htmlFor="ingredient">Ingredient</Label>
+                    <Input
+                        type="text"
+                        placeholder="poison - I mean - potatoes"
+                        name="ingredient"
+                        required
+                        value={ingredient}
+                        onChange={(e) => setIngredient(e.target.value)} />
                 </FormGroup>
 
                 <FormGroup>
-                    <Label htmlFor="quantity" />
-                    <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                    <Label
+                        className="form-label"
+                        htmlFor="quantity">Quantity</Label>
+                    <br></br>
+                    <Input
+                        type="number"
+                        name="quantity"
+                        min="1"
+                        required
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
                 <br></br>
-                <Button type="submit">Click to Submit</Button>
+                <Button type="submit">Submit</Button>
             </Form>
         </>
     );
