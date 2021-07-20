@@ -37,7 +37,7 @@ const Login = (props) => {
     
     return (
         <div>
-            <h1>Get in the Kitchen Already</h1>
+            <h1>Log In</h1>
             
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -58,9 +58,13 @@ const Login = (props) => {
                         value={password}
                     />
                 </FormGroup>
-            
-                <Button type="submit"> Login </Button>
+             <br>
+            </br>
+                <Button type="submit"> Login
+                </Button>
             </Form>
+            <br>
+            </br>
         </div>
     );
 };

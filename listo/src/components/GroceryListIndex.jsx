@@ -1,20 +1,35 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import GroceryListUpdate from "./GroceryListUpdate";
 import GroceryListDelete from "./GroceryListDelete";
 import GroceryListCreate from "./GroceryListCreate";
 import GroceryListGet from "./GroceryListGet";
 
-const GroceryListIndex = () => {
+const GroceryListIndex = (props) => {
     const [groceryList, setGroceryList] = useState([]);
-    const [groceryListUpdate, setGroceryListUpdate] = useState({});
-    
+    const [groceryListToUpdate, setGroceryListToUpdate] = useState({});
+   
 
+    const fetchGroceryList = () => {
+        fetch('http://localhost:3000/grocery', {
+            method: 'GET',
+            headers: new Headers ({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.token}`
+            })
+        }) .then( (res) => res.json())
+            .then( (data) => {
+                setGroceryList(data);
+                console.log(data);
+            })
+    }
     const editGroceryList = (listo) => {
-        setGroceryListUpdate(listo);
+        setGroceryListToUpdate(listo);
         console.log(listo);
     }
-//fetchGroceryList() will be the GET Endpoint Function
+    useEffect(() => {
+        fetchGroceryList();
+    }, [])
     return (
         <Container>
             <Row>
@@ -22,7 +37,7 @@ const GroceryListIndex = () => {
                     <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.sessionToken}/> 
                 </Col>
                 <Col md='6'>
-                    <GroceryListUpdate groceryList={groceryList} editGroceryList={editGroceryList} token={props.sessionToken}/>
+                    <GroceryListUpdate groceryListToUpdate={groceryListToUpdate} token={props.sessionToken}/>
                 </Col>
             </Row>
         </Container>
@@ -30,4 +45,3 @@ const GroceryListIndex = () => {
 };
 
 export default GroceryListIndex;
-

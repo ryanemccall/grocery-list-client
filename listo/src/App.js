@@ -3,13 +3,10 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import { BrowserRouter as Router } from "react-router-dom";
-import GroceryListCreate from './components/GroceryListCreate';
-import GroceryListGet from './components/GroceryListGet';
-import GroceryListDelete from './components/GroceryListDelete';
-import GroceryListUpdate from './components/GroceryListUpdate';
-import GroceryListIndex from "./components/GroceryListIndex";
 import ValidateSession from './auth/ValidateSession';
+import GroceryListIndex from "./components/GroceryListIndex";
+import Navigation from './site/Navbar';
+
 
 //test for Ryan ========!!!!!!
 
@@ -71,14 +68,12 @@ function App() {
         <p>Good Food is Good Mood</p>
       </header>
       
-      <Router>
-        <GroceryListCreate/>
-        <GroceryListGet />
-        <GroceryListUpdate />
-        <GroceryListDelete />
-      </Router>
-      
+    
+        
+      <Navigation clickLogout={clearToken}/>
       {userOnlyViews()}
+        
+      
       
     </div>
   )
