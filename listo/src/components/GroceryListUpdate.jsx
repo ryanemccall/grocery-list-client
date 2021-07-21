@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 
 const GroceryListUpdate = (props) => {
+    console.log(props);
     const [editIngredient, setEditIngredient] = useState(props.groceryListToUpdate.ingredient);
     const [editQuantity, setEditQuantity] = useState(props.groceryListToUpdate.quantity);
 

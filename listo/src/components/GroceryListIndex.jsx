@@ -18,13 +18,13 @@ const GroceryListIndex = (props) => {
         <Container>
             <Row>
                 <Col md='12'>
+                    <GroceryListCreate
+                        token={props.token} />
+                </Col>
+                <Col md='12'>
                     <GroceryListGet
                         token={props.token}
                         groceryList={groceryList} />
-                </Col>
-                <Col md='12'>
-                    <GroceryListCreate
-                        token={props.token} />
                 </Col>
                 <Col md='6'>
                     <GroceryListUpdate

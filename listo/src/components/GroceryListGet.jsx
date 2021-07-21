@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Table } from 'reactstrap';
 
 const GroceryListGet = (props) => {
-
+    console.log(props);
     const [groceries, setGroceries] = useState([]);
 
     const fetchGroceryList = () => {

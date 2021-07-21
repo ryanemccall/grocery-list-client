@@ -15,7 +15,7 @@ const GroceryListCreate = (props) => {
                 'Authorization': `Bearer ${props.token}`  //May need Bearer here
             })
         }).then( (res) => res.json())
-        .then( (groceriesData) => {
+        .then((groceriesData) => {
             console.log('GROCERIES DATA '+ groceriesData);
             setIngredient('');
             setQuantity();
