@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import { Button, Table } from "reactstrap";
 
 const GroceryListDelete = (props) => {
@@ -18,19 +18,21 @@ const GroceryListDelete = (props) => {
 
     const groceryListMapper = () => {
         // console.log(`ENTERED groceryListMapper`);
-        return props.groceryList.map((listo, index) => {
-            return(
-                <tr key={index}>
-                    <th scope="row">{listo.id}</th>
-                    <td>{listo.ingredient}</td>
-                    <td>{listo.quantity}</td>
-                    <td>
-                        <Button color="info" onClick={() => {props.editGroceryList(listo); props.updateOn()}}>Update</Button>
-                        <Button outline color="danger" onClick={() => {deleteGroceryList(listo)}}>Delete</Button>
-                    </td>
-                </tr>
-            )
-        })
+        if (props.groceryList.length > 0) {
+            return props.groceryList.map((listo, index) => {
+                return (
+                    <tr key={index}>
+                        <th scope="row">{listo.id}</th>
+                        <td>{listo.ingredient}</td>
+                        <td>{listo.quantity}</td>
+                        <td>
+                            <Button color="info" onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
+                            <Button outline color="danger" onClick={() => { deleteGroceryList(listo) }}>Delete</Button>
+                        </td>
+                    </tr>
+                )
+            })
+        }
     }
     return ( 
         <>
