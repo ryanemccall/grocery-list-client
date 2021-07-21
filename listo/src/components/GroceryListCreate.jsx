@@ -7,6 +7,7 @@ const GroceryListCreate = (props) => {
 
     const handleSubmit = (e) => {
         //e.preventDefault();
+        console.log("Hey you work?")
         fetch('http://localhost:3000/grocery/', {
             method: 'POST',
             body: JSON.stringify({grocery: {ingredient: ingredient, quantity: quantity}}),
@@ -19,7 +20,7 @@ const GroceryListCreate = (props) => {
             console.log('GROCERIES DATA '+groceriesData);
             setIngredient('');
             setQuantity();
-            //props.fetchGroceryList(); Breaks the Server
+            props.fetchGroceryList(); 
         })
     }
 
