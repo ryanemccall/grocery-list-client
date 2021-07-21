@@ -35,7 +35,7 @@ const Login = (props) => {
     };
     
     return (
-        <div>
+        <div className="container">
             <h1>Log In</h1>
             
             <Form onSubmit={handleSubmit}>

@@ -26,6 +26,8 @@ const GroceryListCreate = (props) => {
 
     return (
         <>
+            <div className="container">
+           
             <h3>Add to Grocery List</h3>
             
             <small className="text-muted">
@@ -61,7 +63,8 @@ const GroceryListCreate = (props) => {
                 </FormGroup>
                 <br></br>
                 <Button type="submit">Submit</Button>
-            </Form>
+                </Form>
+                 </div>
         </>
     );
 }
