@@ -1,53 +1,13 @@
-import React, { useState, useEffect } from 'react';
+//I DO NOT THINK WE NEED THIS FILE ANYMORE AS IT WILL EXIST IN THE GROCERYLISTINDEX FILE INSTEAD --RYAN
+
+// Kinda wanna push back a bit - separation of concerns. A small collection of files that clearly do different things, versus one file with All The Things. That also allows us to work in separate files and commit without creating merge conflicts in the one megafile.  --SHANNON
+
+import React from 'react';
 import { Table } from 'reactstrap';
 
 const GroceryListGet = (props) => {
 
-    const [groceries, setGroceries] = useState([]);
-
-console.log(props.token);
-console.log(props);
-    const fetchGroceryList = () => {
-        return fetch('http://localhost:3000/grocery', {
-            method: 'GET',
-            // mode: 'no-cors',
-            headers: new Headers ({
-                'Content-Type': 'application/json',
-                // 'Access-Control-Allow-Origin': '*',
-                'Authorization': `Bearer ${props.token}`
-            }),
-        })
-        .then(data => data.json())     // not getting this far
-        .then(results => {
-            setGroceries(results);
-            console.log(`RESULTS: ${results}`);
-            })
-        .catch(console.error);
-    };
-
-
-
-    const groceryListMapper = () => {
-        console.log(`ENTERED groceryListMapper`);
-        return groceries.map((item, index) => {
-            return(
-                <tr key={index}>
-                    <th scope="row">{item.id}</th>
-                    <td>{item.ingredient}</td>
-                    <td>{item.quantity}</td>
-                </tr>
-            )
-        })
-    }
-
-
-    useEffect(() => {
-        fetchGroceryList();
-    }, [props.token, props.groceryList])
     
-
-    
-
     return(
         <>
             <h3>My Grocery List</h3>
@@ -61,13 +21,11 @@ console.log(props);
                     </tr>
                 </thead>
                 <tbody>
-                    {groceryListMapper()}
+                    {props.groceryListMapper()}
                 </tbody>
             </Table>
         </>
-
     )
-    
 }
 
 export default GroceryListGet;
