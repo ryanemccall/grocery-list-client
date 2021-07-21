@@ -1,18 +1,27 @@
 import { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+// import { Spinner } from 'reactstrap';
 
 
 //login and signup forms contain the same info, but differ in their titles and the action they initiate with server when a successful user account is made.
-
 
 const Signup = (props) => {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    // const awaitUserCreate = () => {
+    //     return (
+    //         <div>
+    //         <Spinner
+    //             size="sm"
+    //                 color="primary" />
+    //             </div>
+    //         ) 
+    // }
+    
     const handleSubmit = (event) => {
         event.preventDefault();
-       // if (email !== " " && password !== " ") {
             fetch("http://localhost:3000/user/signup", {
                 method: "POST", 
                 body: JSON.stringify(
@@ -23,45 +32,68 @@ const Signup = (props) => {
             })
                 .then((response) => response.json())
                 .then((data) =>
-                //takes the session token from the response and passes it to the updatetoken object
                 {
-                    console.log(data);
-                    props.updateToken(data.sessionToken)
-                    console.log("Molto bene. You've signed up. Let's get cookin good lookin.") })
-        //} else {
-           // window.alert("Username and password are required.")
-        //};
+                    //display to user the server's response
+                    //then update the token
+                    window.alert(data.message);
+                    //takes the session token from the response and passes it to the updatetoken object IF a sessionToken exists
+                    if (data.sessionToken) {
+                    //we can do this bc updateToken is defined in app.js
+                        props.updateToken(data.sessionToken)
+                    }
+                })
     };
+    
     
     //this is our own return 
     return (
 
-<div>
-<h1>Create an Account</h1>
+        <div>
+            <h1>Create Account</h1>
 
-   <Form onSubmit = {handleSubmit}>
+            <Form onSubmit = {handleSubmit}>
                 <FormGroup>
                     
-                    <Label htmlFor="email">Email</Label>
-                <Input
-                    name="email"
+                    <Label
+                        className="form-label"
+                        htmlFor="email">Email</Label>
+                    <Input
+                        name="email"
+                        placeholder="thenakedchef@email.com"
+                        type="email"
+                        aria-required="true"
+                        required
                     //target is the target element of the event-in this case, the input
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                 />
-                </FormGroup>
+                    </FormGroup>
                 
                 <FormGroup>
-                    <Label htmlFor="password">The Secret Sauce (Password)</Label>
-                <Input
-                    name="password"
-                    //callback functions, being called within the onChange event handlers, are called with an 'event' object as an argument.  This is default behavior to any event handler.  Digging into these event objects let us grab hold of the input data the user has typed
+                    <Label
+                        className="form-label"
+                        htmlFor="password">Password</Label>
+                    <Input
+                        placeholder="make it strong, spicy, and at least 6 characters"
+                        type="text"
+                        name="password"
+                        aria-required="true"
+                        required
+                        minLength="6"
+                    //callback functions, being called within the onChange event handlers, are called with an 'event' object as an argument. This is default behavior to any event handler.  Digging into these event objects let us grab hold of the input data the user has typed
+                        
                     onChange={(e) => setPassword(e.target.value)}
-                    value={password}/>
+                    value={password} />
+                    
                 </FormGroup>
-            
-                <Button type="submit"> Sign Up! </Button>
+             <br>
+            </br>
+                <Button
+                    // onClick={awaitUserCreate}
+                    type="submit"> Sign Up </Button>
             </Form>
+            <br>
+            </br>
             </div>
     );
 };

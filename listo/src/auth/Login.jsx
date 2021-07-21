@@ -23,44 +23,60 @@ const Login = (props) => {
             .then((data) =>
                 //takes the session token from the response and passes it to the updatetoken object
             {
+                //displays what message the server has programmed
+                window.alert(data.message);
+                if (data.sessionToken) {
                 props.updateToken(data.sessionToken);
-                console.log("Bravo - you're logged in. Let's get cookin good lookin.")
+                }
             })
             .catch((error) => {
             console.log(error.message)
             })
-        
-        //} else {
-            //window.alert("Username and password are required.")
-        //};
     };
     
     return (
         <div>
-            <h1>Get in the Kitchen Already</h1>
+            <h1>Log In</h1>
             
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     
-                    <Label htmlFor="email">Email</Label>
+                    <Label
+                        className="form-label"
+                        htmlFor="email">Email</Label>
                     <Input
                         name="email"
+                        placeholder="yeschef@email.com"
+                        type="email"
+                        aria-required="true"
+                        required
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}     
                    />
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label htmlFor="password">The Secret Sauce (Password)</Label>
+                    <Label
+                        className="form-label"
+                        htmlFor="password">Password</Label>
                     <Input
                         name="password"
+                        placeholder="the secret sauce"
+                        type="text"
+                        aria-required="true"
+                        required
+                        minLength="6"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
                     />
                 </FormGroup>
-            
-                <Button type="submit"> Login </Button>
+             <br>
+            </br>
+                <Button type="submit"> Get Cookin
+                </Button>
             </Form>
+            <br>
+            </br>
         </div>
     );
 };

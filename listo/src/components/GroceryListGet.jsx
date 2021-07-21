@@ -23,7 +23,6 @@
 //         })
 //         .catch(console.error);
 //     };
-
 //     // const groceryListMapper = () => {
 //     //     console.log(`ENTERED groceryListMapper`);
 //     //     return groceries.map((item, index) => {
@@ -40,6 +39,7 @@
 //     //         )
 //     //     })
 //     // }
+
     
 //     useEffect(() => {
 //         fetchGroceryList();

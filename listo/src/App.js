@@ -6,11 +6,7 @@ import './App.css';
 import ValidateSession from './auth/ValidateSession';
 import GroceryListIndex from "./components/GroceryListIndex";
 import Navigation from './site/Navbar';
-
-
-
-//test for Ryan ========!!!!!!
-
+import SiteFooter from './site/Footer';
 
 //app call
 
@@ -33,8 +29,8 @@ function App() {
     //sets value of token to the value of newToken
     //if token does not exists, creates a new key value pair
     localStorage.setItem("token", newToken);
+    console.log(newToken)
     setSessionToken(newToken);
-    console.log(sessionToken);
   };
 
   //removes token upon end of session
@@ -68,17 +64,11 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Good Food is Good Mood</p>
       </header>
-      
-    
-        
-      <Navigation clickLogout={clearToken}/>
+      <Navigation clickLogout={clearToken} />
       {userOnlyViews()}
-        
-      
-      
+      <SiteFooter />
     </div>
   )
 };
-
 
 export default App;

@@ -52,6 +52,9 @@ const GroceryListIndex = (props) => {
     return (
         <Container>
             <Row>
+                 <Col md='12'>
+                    <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.token}/> 
+                </Col>
                 <Col md='12'>
                     <GroceryListDelete 
                     editGroceryList={editGroceryList} 
@@ -62,9 +65,6 @@ const GroceryListIndex = (props) => {
                     token={props.token} 
                     />
                 </Col>
-                <Col md='12'>
-                    <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.token}/> 
-                </Col>
                 {updatePop ? <GroceryListUpdate groceryListToUpdate={groceryListToUpdate}
                 updateOff={updateOff} token={props.token} fetchGroceryList={fetchGroceryList} /> : <></> }
             </Row>
@@ -73,4 +73,3 @@ const GroceryListIndex = (props) => {
 };
 
 export default GroceryListIndex;
-
