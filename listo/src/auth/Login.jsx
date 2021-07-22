@@ -72,7 +72,9 @@ const Login = (props) => {
                 </FormGroup>
              <br>
             </br>
-                <Button type="submit"> Get Cookin
+                <Button
+                    className="btn-auth"
+                    type="submit"> Get Cookin
                 </Button>
             </Form>
             <br>
