@@ -26,6 +26,8 @@ const GroceryListUpdate = (props) => {
     useEffect(() => {
                props.fetchGroceryList();
              }, [props.token, props.groceryList])
+
+    
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
         <Modal isOpen={true}>
