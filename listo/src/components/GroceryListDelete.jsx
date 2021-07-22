@@ -18,6 +18,7 @@ const GroceryListDelete = (props) => {
 
     const groceryListMapper = () => {
         // console.log(`ENTERED groceryListMapper`);
+        if (props.groceryList.length > 0) {
         return props.groceryList.map((listo, index) => {
             return(
                 <tr key={index}>
@@ -31,7 +32,8 @@ const GroceryListDelete = (props) => {
                 </tr>
             )
         })
-    }
+    } 
+}
     return ( 
         <>
         <h3>My Grocery List</h3>
