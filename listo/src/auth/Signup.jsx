@@ -90,7 +90,9 @@ const Signup = (props) => {
             </br>
                 <Button
                     // onClick={awaitUserCreate}
-                    type="submit"> Sign Up </Button>
+                    type="submit"
+                    className="btn-auth"
+                > Sign Up </Button>
             </Form>
             <br>
             </br>
