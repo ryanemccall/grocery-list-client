@@ -26,10 +26,6 @@
   font-family: 'Belleza', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -56,7 +52,7 @@ font-family: 'Belleza', sans-serif;
 
 .container {
 background-color: #82c787;
-width: 100%; 
+width: 100%!important; 
 padding: 1em;
 margin: auto;
 color: white;
@@ -65,3 +61,36 @@ color: white;
 .nav-container {
 background-color: #AC663E;
 }
+
+.footer {
+text-align:center;
+justify-content: center;
+}
+
+thead {
+font-family: "Belleza", sans-serif;
+}
+
+thead, td, th {
+color: #AC663E;
+}
+
+table {
+background-color: #EBD569;
+border-radius: .5em;
+margin-bottom: .5em;
+}
+
+#btn-delete, #btn-update {
+margin: .2em;
+}
+
+#btn-delete {
+background-color: #AC663E;
+color: white!important;
+}
+
+#btn-update {
+background-color: #82c787;
+}
+

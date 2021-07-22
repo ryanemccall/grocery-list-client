@@ -26,8 +26,13 @@ const GroceryListDelete = (props) => {
                         <td>{listo.ingredient}</td>
                         <td>{listo.quantity}</td>
                         <td>
-                            <Button color="info" onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
-                            <Button outline color="danger" onClick={() => { deleteGroceryList(listo) }}>Delete</Button>
+                            <Button
+                                id="btn-update"
+                                onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
+                            
+                            <Button
+                                id="btn-delete"
+                                outline onClick={() => { deleteGroceryList(listo) }}>Remove</Button>
                         </td>
                     </tr>
                 )
@@ -35,8 +40,8 @@ const GroceryListDelete = (props) => {
         }
     }
     return ( 
-        <>
-        <h3>My Grocery List</h3>
+        <div className="container">
+        <h2>My Grocery List</h2>
         <hr />
         <Table striped>
             <thead>
@@ -50,7 +55,7 @@ const GroceryListDelete = (props) => {
                 {groceryListMapper()}
             </tbody>
         </Table>
-    </>
+    </div>
 
 )
 };
