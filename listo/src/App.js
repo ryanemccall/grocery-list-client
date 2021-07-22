@@ -1,15 +1,12 @@
 //imports 
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import bake from './assets/logos/bake-orange.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import { BrowserRouter as Router } from "react-router-dom";
-import GroceryListCreate from './components/GroceryListCreate';
-import GroceryListGet from './components/GroceryListGet';
-import GroceryListDelete from './components/GroceryListDelete';
-import GroceryListUpdate from './components/GroceryListUpdate';
-import GroceryListIndex from "./components/GroceryListIndex";
 import ValidateSession from './auth/ValidateSession';
+import GroceryListIndex from "./components/GroceryListIndex";
+import Navigation from './site/Navbar';
+import SiteFooter from './site/Footer';
 
 //app call
 
@@ -32,8 +29,8 @@ function App() {
     //sets value of token to the value of newToken
     //if token does not exists, creates a new key value pair
     localStorage.setItem("token", newToken);
+    console.log(newToken)
     setSessionToken(newToken);
-    console.log(sessionToken);
   };
 
   //removes token upon end of session
@@ -63,23 +60,20 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <h1>Listo</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Good Food is Good Mood</p>
-      </header>
+        <h1>LISTO</h1>
+        <img src={bake}
+          className="App-logo"
+          alt="logo" />
+        <h2>GOOD FOOD IS GOOD MOOD</h2>
+     </header>
       
-      <Router>
-        <GroceryListCreate/>
-        <GroceryListGet />
-        <GroceryListUpdate />
-        <GroceryListDelete />
-      </Router>
-      
+      <Navigation
+        clickLogout={clearToken} />
       {userOnlyViews()}
-      
+      <SiteFooter />
+            
     </div>
   )
 };
-
 
 export default App;

@@ -1,10 +1,11 @@
 .App {
-  text-align: center;
-}
+  font-family: 'Open Sans', sans-serif;
+} 
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  padding: .5em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +15,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #EBD569;
   min-height: 100vh;
   display: flex;
+  color: #AC663E;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  font-size: calc(14px + 2vmin);
+  font-family: 'Belleza', sans-serif;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +34,68 @@
     transform: rotate(360deg);
   }
 }
+
+.mr-auto {
+margin-left: .5em!important;
+padding: .5em;
+color: white!important;
+font-family: 'Belleza', sans-serif;
+}
+
+.form-label{
+padding: .3em;
+}
+
+h1, h2 {
+font-family: 'Belleza', sans-serif;
+}
+
+.container {
+background-color: #82c787;
+/* width: 100%!important;  RYAN: This was the original code but it has whitespace I changed it to Max-Width to get to have the green all the way across */
+max-width: 100%;
+padding: 1em;
+margin: auto;
+color: white;
+}
+
+.nav-container {
+background-color: #AC663E;
+}
+
+.footer {
+text-align:center;
+justify-content: center;
+}
+
+thead {
+font-family: "Belleza", sans-serif;
+}
+
+thead, td, th {
+color: #AC663E;
+}
+
+table {
+background-color: #EBD569;
+border-radius: .5em;
+margin-bottom: .5em;
+}
+
+#submitBtn {
+  margin-left: 38%;
+  background-color: #AC663E;
+}
+#btn-delete, #btn-update {
+margin: .2em;
+}
+
+#btn-delete {
+background-color: #AC663E;
+color: white!important;
+}
+
+#btn-update {
+background-color: #82c787;
+}
+
