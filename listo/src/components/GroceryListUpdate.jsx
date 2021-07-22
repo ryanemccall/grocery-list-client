@@ -19,21 +19,23 @@ const GroceryListUpdate = (props) => {
         }).then((res) => {
             props.fetchGroceryList(); //THIS WILL BE WHATEVER WE CALL THE GET ENDPOINT IN GroceryListGet.JSX (SHANNONS ENDPOINT)
             props.updateOff(); 
-             
         })
         .catch(console.error)
     }
     useEffect(() => {
-               props.fetchGroceryList();
-             }, [props.token, props.groceryList])
+        props.fetchGroceryList();
+    }, [props.token, props.groceryList])
 
-    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        groceryListEdit();
+    }
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
         <Modal isOpen={true}>
             <ModalHeader>Update Ingredient and Quantity</ModalHeader>
             <ModalBody>
-                <Form onSubmit={groceryListEdit}>
+                <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Label htmlFor="ingredient" />
                         <Input name="ingredient" value={editIngredient} onChange={(e) => setEditIngredient(e.target.value)}/>
@@ -43,7 +45,7 @@ const GroceryListUpdate = (props) => {
                     <Label htmlFor="quantity" />
                     <Input name="quantity" value={editQuantity} onChange={(e) => setEditQuantity(e.target.value)}/>
                 </FormGroup>
-                <Button type="submit">Update</Button>
+                    <Button type="submit">Update</Button>
                 </Form>
             </ModalBody>
         </Modal>
