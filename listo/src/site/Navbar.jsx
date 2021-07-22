@@ -18,20 +18,24 @@ const Navigation = (props) => {
 
     return (
 
- <div>
-      <Navbar color="faded" light>
+ <div class="nav-container">
+      <Navbar light>
                 <NavbarBrand
                     href="/"
-                    className="mr-auto">Listo</NavbarBrand>
+                    className="mr-auto">LISTO</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-            <Button onClick={props.clickLogout}>Logout</Button>
+                <Button
+                  style={{ marginLeft: "1em" }}
+                  onClick={props.clickLogout}>Logout</Button>
                         </NavItem>
                         <br></br>
             <NavItem>
-             <Button onClick={props.GroceryListGet}>Grocery Lists</Button>
+                <Button
+                  style={{ marginLeft: "1em" }}
+                  onClick={props.GroceryListGet}>Grocery Lists</Button>
             </NavItem>
           </Nav>
         </Collapse>

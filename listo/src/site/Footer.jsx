@@ -5,11 +5,15 @@ class SiteFooter extends Component {
     render() { 
         return ( 
             <div className="container">
+                
+                <div className="footer">
+                
                 <br></br>
-                <small className="text-muted">
+                <small>
                 &copy; 2021 | Avengers | S. Dillman | R. Modrall | E. Jackson
                 </small>
-                <br></br>
+                    <br></br>
+            </div>
             </div>
         );
     }

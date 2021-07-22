@@ -68,7 +68,10 @@ function App() {
 
     <div className="App">
       <header className="App-header">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/develop
         <h1>LISTO</h1>
         <img src={bake}
           className="App-logo"
@@ -81,7 +84,10 @@ function App() {
       {userOnlyViews()}
       <SiteFooter />
             
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/develop
     </div>
   )
 };
