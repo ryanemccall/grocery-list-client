@@ -1,6 +1,6 @@
 //imports 
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import bake from './assets/logos/bake-orange.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import ValidateSession from './auth/ValidateSession';
@@ -60,13 +60,18 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <h1>Listo</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Good Food is Good Mood</p>
-      </header>
-      <Navigation clickLogout={clearToken} />
+        <h1>LISTO</h1>
+        <img src={bake}
+          className="App-logo"
+          alt="logo" />
+        <h2>GOOD FOOD IS GOOD MOOD</h2>
+     </header>
+      
+      <Navigation
+        clickLogout={clearToken} />
       {userOnlyViews()}
       <SiteFooter />
+            
     </div>
   )
 };

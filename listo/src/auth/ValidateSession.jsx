@@ -5,22 +5,24 @@ import Login from "./Login"
 
 const ValidateSession = (props) => {
     return (
+        <div className="container">
         <Container>
             <Row>
-                <Col md='6'>
+                <Col md='7'>
                     <Signup
                         //grabbing token method from App.js
                         updateToken={props.updateToken}
                     />
                 </Col>
-                <Col md='6' className="login-col">
+                <Col md='7'>
                     <Login
                         //grabbing token method from app.js
                         updateToken={props.updateToken}
                     />
                 </Col>
             </Row>
-        </Container>
+            </Container>
+            </div>
     );
 };
 

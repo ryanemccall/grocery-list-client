@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import { Button, Table } from "reactstrap";
 
 const GroceryListDelete = (props) => {
@@ -19,26 +19,33 @@ const GroceryListDelete = (props) => {
     const groceryListMapper = () => {
         // console.log(`ENTERED groceryListMapper`);
         if (props.groceryList.length > 0) {
-        return props.groceryList.map((listo, index) => {
-            return(
-                <tr key={index}>
-                    <th scope="row">{listo.id}</th>
-                    <td>{listo.ingredient}</td>
-                    <td>{listo.quantity}</td>
-                    <td>
-                        <Button color="info" onClick={() => {props.editGroceryList(listo); props.updateOn()}}>Update</Button>
-                        <Button outline color="danger" onClick={() => {deleteGroceryList(listo)}}>Delete</Button>
-                    </td>
-                </tr>
-            )
-        })
-    } 
-}
+
+            return props.groceryList.map((listo, index) => {
+                return (
+                    <tr key={index}>
+                        <th scope="row">{listo.id}</th>
+                        <td>{listo.ingredient}</td>
+                        <td>{listo.quantity}</td>
+                        <td>
+                            <Button
+                                id="btn-update"
+                                onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
+                            
+                            <Button
+                                id="btn-delete"
+                                outline onClick={() => { deleteGroceryList(listo) }}>Remove</Button>
+                        </td>
+                    </tr>
+                )
+            })
+        }
+    }
+
     return ( 
-        <>
-        <h3>My Grocery List</h3>
+        <div className="container">
+        <h2>My Grocery List</h2>
         <hr />
-        <Table striped>
+        <Table hover striped>
             <thead>
                 <tr>
                     <th>#</th>
@@ -50,7 +57,7 @@ const GroceryListDelete = (props) => {
                 {groceryListMapper()}
             </tbody>
         </Table>
-    </>
+    </div>
 
 )
 };

@@ -8,15 +8,15 @@ const GroceryListUpdate = (props) => {
    
     const groceryListEdit = (e, groceryList) => {
         console.log(groceryList);
-       // e.preventDefault();
-    fetch(`http://localhost:3000/grocery/update/${props.groceryListToUpdate.id}`,{
+        // e.preventDefault(); 
+        fetch(`http://localhost:3000/grocery/update/${props.groceryListToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({grocery: {ingredient: editIngredient, quantity: editQuantity}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }) .then((res) => {
+        }).then((res) => {
             props.fetchGroceryList(); //THIS WILL BE WHATEVER WE CALL THE GET ENDPOINT IN GroceryListGet.JSX (SHANNONS ENDPOINT)
             props.updateOff(); 
              

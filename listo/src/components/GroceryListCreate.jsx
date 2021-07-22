@@ -16,7 +16,7 @@ const GroceryListCreate = (props) => {
                 'Authorization': `Bearer ${props.token}`  //May need Bearer here
             })
         }).then( (res) => res.json())
-        .then( (groceriesData) => {
+        .then((groceriesData) => {
             console.log('GROCERIES DATA '+ groceriesData);
             setIngredient('');
             setQuantity();
@@ -26,12 +26,17 @@ const GroceryListCreate = (props) => {
 
     return (
         <>
-            <h3>Add to Grocery List</h3>
+            <div className="container">
+           
+            <h2>Add to Grocery List</h2>
             
-            <small className="text-muted">
-                Need milk and eggs or chocolate and red wine? Tell Listo what you need and it will populate a grocery list for you.
-            </small>
-            
+            <p>
+                    Is it a milk and eggs kind of trip or chocolate and red wine?
+                    <br></br>Just tell Listo what you need and it will create a grocery list for you.
+                    <br></br>
+                    <br></br>
+            </p>
+        
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label
@@ -60,8 +65,9 @@ const GroceryListCreate = (props) => {
                         onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
                 <br></br>
-                <Button type="submit">Submit</Button>
-            </Form>
+                <Button id="submitBtn" size="lg" type="submit">Add to List</Button>
+                </Form>
+                 </div>
         </>
     );
 }
