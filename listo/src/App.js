@@ -3,16 +3,10 @@ import React, { useEffect, useState } from 'react';
 import bake from './assets/logos/bake-orange.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import { BrowserRouter as Router } from "react-router-dom";
-import GroceryListCreate from './components/GroceryListCreate';
-import GroceryListGet from './components/GroceryListGet';
-import GroceryListDelete from './components/GroceryListDelete';
-import GroceryListUpdate from './components/GroceryListUpdate';
-import GroceryListIndex from './components/GroceryListIndex';
-import ValidateSession from './auth/ValidateSession';
-
-
-//test for Ryan ========!!!!!!
+import ValidateSession from './auth/ValidateSession';
+import GroceryListIndex from "./components/GroceryListIndex";
+import Navigation from './site/Navbar';
+import SiteFooter from './site/Footer';
 
 
 //app call
