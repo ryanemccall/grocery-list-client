@@ -21,9 +21,11 @@ const Navigation = (props) => {
 
  <div class="nav-container">
         <Navbar dark>
-          
+          {/* <div>
+              <img src="bake-white.png" width="100px" alt="listo logo"/>
+          </div> */}
           <NavbarBrand
-                    href="/"
+            href="/"
             className="mr-auto"
             img src="./assets/logos/bake-white.png">
             LISTO
