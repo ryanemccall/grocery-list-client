@@ -14,7 +14,7 @@ const GroceryListUpdate = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }) .then((res) => {
+        }).then((res) => {
             props.fetchGroceryList(); //THIS WILL BE WHATEVER WE CALL THE GET ENDPOINT IN GroceryListGet.JSX (SHANNONS ENDPOINT)
             // props.updateOff(); //IF WE WANT TO HAVE AN UPDATE INFORMATION BE A POP UP WINDOW LIKE IN WOKROUT OUT LOG WE WILL NEED THIS
             //Otherwise, if we want to make look different we will have to research some other looks for the update. 
