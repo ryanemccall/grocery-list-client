@@ -1,8 +1,6 @@
 //imports 
 import React, { useEffect, useState } from 'react';
-import bake from './assets/bake.svg'
-import listy from './listy.webp';
-import winky from './assets/winky.png'
+import bake from './assets/logos/bake-orange.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import ValidateSession from './auth/ValidateSession';
@@ -63,13 +61,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>LISTO</h1>
-        <img src={winky} className="App-logo" alt="logo" />
-        <h2>Good Food is Good Mood</h2>
-      </header>
+        <img src={bake}
+          className="App-logo"
+          alt="logo" />
+        <h2>GOOD FOOD IS GOOD MOOD</h2>
+     </header>
       
-      <Navigation clickLogout={clearToken} />
+      <Navigation
+        clickLogout={clearToken} />
       {userOnlyViews()}
       <SiteFooter />
+            
     </div>
   )
 };
