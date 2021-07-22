@@ -6,8 +6,8 @@ const GroceryListCreate = (props) => {
     const [quantity, setQuantity] = useState();
 
     const handleSubmit = (e) => {
-        console.log(`from HANDLE SUBMIT - INGREDIENT: ${ingredient}`);
-        // e.preventDefault();
+        //e.preventDefault();
+        console.log("Hey you work?")
         fetch('http://localhost:3000/grocery/', {
             method: 'POST',
             body: JSON.stringify({grocery: {ingredient: ingredient, quantity: quantity}}),
@@ -16,17 +16,27 @@ const GroceryListCreate = (props) => {
                 'Authorization': `Bearer ${props.token}`  //May need Bearer he
             })
         }).then( (res) => res.json())
-        .then( (groceriesData) => {
-            console.log('GROCERIES DATA  ' + groceriesData);
+        .then((groceriesData) => {
+            console.log('GROCERIES DATA '+ groceriesData);
             setIngredient('');
             setQuantity();
-            // props.fetchGroceryList();
+            props.fetchGroceryList(); 
         })
     }
 
     return (
         <>
-            <h3>Need milk? (Or anything else?)</h3>
+            <div className="container">
+           
+            <h2>Add to Grocery List</h2>
+            
+            <p>
+                    Is it a milk and eggs kind of trip or chocolate and red wine?
+                    <br></br>Just tell Listo what you need and it will create a grocery list for you.
+                    <br></br>
+                    <br></br>
+            </p>
+        
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="ingredient" />
@@ -37,8 +47,10 @@ const GroceryListCreate = (props) => {
                     <Label htmlFor="quantity" />
                     <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </FormGroup>
-                <Button type="submit">Click to Submit</Button>
-            </Form>
+                <br></br>
+                <Button type="submit">Add to List</Button>
+                </Form>
+                 </div>
         </>
     )
 }

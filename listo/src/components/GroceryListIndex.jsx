@@ -3,13 +3,14 @@ import { Container, Row, Col } from "reactstrap";
 import GroceryListUpdate from "./GroceryListUpdate";
 import GroceryListDelete from "./GroceryListDelete";
 import GroceryListCreate from "./GroceryListCreate";
-import GroceryListGet from "./GroceryListGet";
+//import GroceryListGet from "./GroceryListGet";
 
 const GroceryListIndex = (props) => {
     const [groceryList, setGroceryList] = useState([]);
+    const [updatePop, setUpdatePop] = useState(false);
     const [groceryListToUpdate, setGroceryListToUpdate] = useState({});
-
-    const [groceries, setGroceries] = useState([]);
+    const [groceryListToDelete, setGroceryListToDelete] = useState({});
+    
 
     const fetchGroceryList = () => {
         fetch('http://localhost:3000/grocery', {
@@ -20,57 +21,52 @@ const GroceryListIndex = (props) => {
             })
         }).then( data => data.json())
         .then( results => {
-            setGroceries(results);
+            setGroceryList(results);
             console.log(results);
         })
         .catch(console.error);
     };
-
-    const groceryListMapper = () => {
-        console.log(`ENTERED groceryListMapper`);
-        if (groceries.length > 0) {
-            return groceries.map((item, index) => {
-                return (
-                    <tr key={index}>
-                        <th scope="row">{item.id}</th>
-                        <td>{item.ingredient}</td>
-                        <td>{item.quantity}</td>
-                    </tr>
-                )
-            })
-        } else {
-        console.log("There are no groceries to map")
-        }
-    }
-    
-    useEffect(() => {
-        fetchGroceryList();
-    }, [props.token, props.groceryList])
-    
    
     const editGroceryList = (listo) => {
         setGroceryListToUpdate(listo);
         console.log(listo);
     }
+
+    const deleteGroceryList = (listo) => {
+        setGroceryListToDelete(listo);
+        console.log(listo);
+    }
+
+    //Ryan--Adding this to control the Pop Up Modal for the Update feature of the App
+    const updateOn = () => {
+        setUpdatePop(true);
+    }
    
+    const updateOff = () => {
+        setUpdatePop(false);
+    }
+
+    useEffect(() => {
+        fetchGroceryList()
+    }, [props.token, props.groceryList])
     return (
         <Container>
             <Row>
-                <Col md='12'>
-                    <GroceryListGet
-                        token={props.token}
-                        groceryList={groceryList}
-                        groceryListMapper={groceryListMapper} />
+                 <Col md='12'>
+                    <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.token}/> 
                 </Col>
                 <Col md='12'>
-                    <GroceryListCreate
-                        token={props.token} />
+                    <GroceryListDelete 
+                    editGroceryList={editGroceryList} 
+                    updateOn={updateOn} 
+                    fetchGroceryList={fetchGroceryList}
+                    groceryList={groceryList} 
+                    deleteGroceryList={deleteGroceryList}
+                    token={props.token} 
+                    />
                 </Col>
-                <Col md='6'>
-                    <GroceryListUpdate
-                        groceryListToUpdate={groceryListToUpdate}
-                        token={props.token} />
-                </Col>
+                {updatePop ? <GroceryListUpdate groceryListToUpdate={groceryListToUpdate}
+                updateOff={updateOff} token={props.token} fetchGroceryList={fetchGroceryList} /> : <></> }
             </Row>
         </Container>
     )
