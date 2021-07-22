@@ -52,7 +52,8 @@ font-family: 'Belleza', sans-serif;
 
 .container {
 background-color: #82c787;
-width: 100%!important; 
+/* width: 100%!important;  RYAN: This was the original code but it has whitespace I changed it to Max-Width to get to have the green all the way across */
+max-width: 100%;
 padding: 1em;
 margin: auto;
 color: white;
@@ -81,6 +82,10 @@ border-radius: .5em;
 margin-bottom: .5em;
 }
 
+#submitBtn {
+  margin-left: 38%;
+  background-color: #AC663E;
+}
 #btn-delete, #btn-update {
 margin: .2em;
 }

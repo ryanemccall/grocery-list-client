@@ -65,7 +65,7 @@ const GroceryListCreate = (props) => {
                         onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
                 <br></br>
-                <Button type="submit">Add to List</Button>
+                <Button id="submitBtn" size="lg" type="submit">Add to List</Button>
                 </Form>
                  </div>
         </>
