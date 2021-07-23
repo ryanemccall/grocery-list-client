@@ -86,6 +86,7 @@ margin-bottom: .5em;
   margin-left: 38%;
   background-color: #AC663E;
 }
+
 #btn-delete, #btn-update {
 margin: .2em;
 }
@@ -99,3 +100,32 @@ color: white!important;
 background-color: #82c787;
 }
 
+.btn-nav {
+  margin-left: 1em; 
+  background-color: #EBD569;
+  border-color: #EBD569;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: .4em;
+transition:none;
+}
+
+.btn-nav:visited {
+background-color: #EBD569;
+border:#d2bc53;
+box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-nav:hover {
+background-color: #EBD569;
+border:#d2bc53;
+box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-auth {
+box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+cursor: wait;
+}
+
+.btn-auth:hover {
+box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
