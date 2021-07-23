@@ -16,7 +16,7 @@
 
 .App-header {
   background-color: #EBD569;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   color: #AC663E;
   flex-direction: column;
@@ -52,7 +52,8 @@ font-family: 'Belleza', sans-serif;
 
 .container {
 background-color: #82c787;
-width: 100%!important; 
+/* width: 100%!important;  RYAN: This was the original code but it has whitespace I changed it to Max-Width to get to have the green all the way across */
+max-width: 100%;
 padding: 1em;
 margin: auto;
 color: white;
@@ -81,6 +82,11 @@ border-radius: .5em;
 margin-bottom: .5em;
 }
 
+#submitBtn {
+  margin-left: 38%;
+  background-color: #AC663E;
+}
+
 #btn-delete, #btn-update {
 margin: .2em;
 }
@@ -94,3 +100,32 @@ color: white!important;
 background-color: #82c787;
 }
 
+.btn-nav {
+  margin-left: 1em; 
+  background-color: #EBD569;
+  border-color: #EBD569;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: .4em;
+transition:none;
+}
+
+.btn-nav:visited {
+background-color: #EBD569;
+border:#d2bc53;
+box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-nav:hover {
+background-color: #EBD569;
+border:#d2bc53;
+box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-auth {
+box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+cursor: wait;
+}
+
+.btn-auth:hover {
+box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+}

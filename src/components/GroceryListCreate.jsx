@@ -49,9 +49,19 @@ const GroceryListCreate = (props) => {
                         <Input name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                     </FormGroup>
                     <br></br>
-                    <Button type="submit">Add to List</Button>
-                    </Form>
-            </div>
+                    <FormGroup>
+                    <Input
+                        type="number"
+                        name="quantity"
+                        min="1"
+                        required
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)} />
+                </FormGroup>
+                <br></br>
+                <Button id="submitBtn" size="lg" type="submit">Add to List</Button>
+                </Form>
+                 </div>
         </>
     )
 }

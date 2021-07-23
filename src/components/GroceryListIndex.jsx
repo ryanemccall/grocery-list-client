@@ -52,10 +52,10 @@ const GroceryListIndex = (props) => {
     return (
         <Container>
             <Row>
-                 <Col md='12'>
+                 <Col md={{ size: 4, order: 1, offset: 1}}>
                     <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.token}/> 
                 </Col>
-                <Col md='12'>
+                <Col md={{ size: 8, order: 2, offset: 2}}>
                     <GroceryListDelete 
                     editGroceryList={editGroceryList} 
                     updateOn={updateOn} 
