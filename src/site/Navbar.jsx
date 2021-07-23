@@ -38,18 +38,18 @@ const Navigation = (props) => {
           
             <Nav navbar>
               
-              <NavItem>
+            <NavItem>
                 <Button
                   className="btn-nav"
-                  onClick={props.clickLogout}>Logout
-                </Button>
+                  onClick={props.GroceryListGet}>My Grocery Lists</Button>
             </NavItem>
               
             <NavItem>
                 <Button
                   className="btn-nav"
-                  onClick={props.GroceryListGet}>My Grocery Lists</Button>
-              </NavItem>
+                  onClick={props.clickLogout}>Logout
+                </Button>
+            </NavItem>
               
             </Nav>
             

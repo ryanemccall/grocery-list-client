@@ -109,8 +109,8 @@ background-color: #82c787;
   transition:none;
   color: #AC663E;
 }
-.mr-2 navbar-toggler {
-  margin-left:1em;
+.mr-2 .navbar-toggler {
+  margin-right:1em;
 }
 
 .btn-nav:visited {
