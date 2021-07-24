@@ -1,11 +1,12 @@
 //import React, { useState } from "react";
 import { Button, Table } from "reactstrap";
+import APIURL from '../helpers/environment';
 
 const GroceryListDelete = (props) => {
     // const [groceries, setGroceries] = useState([]);
     const deleteGroceryList = (listo) => {
         if(window.confirm('Are you sure?')){
-            fetch(`http://localhost:3000/grocery/delete/${listo.id}`, {
+            fetch(`${APIURL}/grocery/delete/${listo.id}`, {
                 method: 'DELETE',
                 headers: new Headers({ 
                     'Content-Type': 'application/json',

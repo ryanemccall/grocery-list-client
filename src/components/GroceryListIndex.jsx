@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import GroceryListUpdate from "./GroceryListUpdate";
 import GroceryListDelete from "./GroceryListDelete";
 import GroceryListCreate from "./GroceryListCreate";
+import APIURL from '../helpers/environment'
 //import GroceryListGet from "./GroceryListGet";
 
 const GroceryListIndex = (props) => {
@@ -13,7 +14,7 @@ const GroceryListIndex = (props) => {
     
 
     const fetchGroceryList = () => {
-        fetch('http://localhost:3000/grocery', {
+        fetch(`${APIURL}/grocery`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
