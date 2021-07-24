@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
+import APIURL from '../helpers/environment';
 
 const GroceryListUpdate = (props) => {
     console.log(props)
@@ -9,7 +10,7 @@ const GroceryListUpdate = (props) => {
     const groceryListEdit = (e, groceryList) => {
         console.log(groceryList);
         // e.preventDefault(); 
-        fetch(`http://localhost:3000/grocery/update/${props.groceryListToUpdate.id}`, {
+        fetch(`${APIURL}/grocery/update/${props.groceryListToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({grocery: {ingredient: editIngredient, quantity: editQuantity}}),
             headers: new Headers({
