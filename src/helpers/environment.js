@@ -8,7 +8,7 @@ switch (window.location.hostname) {
         break;
     //this is the depoloyed react app
     case 'listo-sre.herokuapp.com' :
-    APIURL = 'listo-sre.herokuapp.com'
+    APIURL = 'https://listo-sre.herokuapp.com'
 }
 
 export default APIURL;
