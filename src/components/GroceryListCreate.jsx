@@ -27,6 +27,8 @@ const GroceryListCreate = (props) => {
     return (
         <>
             <div className="container">
+                
+                <h1>Welcome {props.username}</h1> 
            
             <h2>Add to Grocery List</h2>
             

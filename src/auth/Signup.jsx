@@ -53,6 +53,16 @@ const Signup = (props) => {
 
             <Form onSubmit = {handleSubmit}>
                 <FormGroup>
+                    <Label 
+                    className="form-label"
+                    htmlFor="username">Name
+                    </Label>
+                    <Input
+                        id="username"
+                        name="username"
+                        placeholder="gordan ramsay"
+                        type="text"
+                    />
                     
                     <Label
                         className="form-label"

@@ -11,7 +11,8 @@ const ValidateSession = (props) => {
                 <Col md='7'>
                     <Signup
                         //grabbing token method from App.js
-                        updateToken={props.updateToken}
+                            updateToken={props.updateToken}
+                            username={props.username}
                     />
                 </Col>
                 <Col md='7'>

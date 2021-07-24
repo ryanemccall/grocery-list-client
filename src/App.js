@@ -14,6 +14,7 @@ function App() {
   
   //put session auth here because it will funnel down to all children 
   const [sessionToken, setSessionToken] = useState("");
+  const [username, setUsername] = useState("");
   
   useEffect(() => {
  //updates sessionToken state variable if browser has saved a sessionToken in localStorage.  
@@ -45,6 +46,7 @@ function App() {
         //if the sessionToken and token in local storage match then we can access user grocery lists
         <GroceryListIndex
           //pass in token as props
+          username={username}
           token={sessionToken} />
         //otherwise if the tokens don't match then we push them back to the validate session page 
         : <ValidateSession

@@ -33,7 +33,9 @@ const Navigation = (props) => {
           
         <NavbarToggler
             onClick={toggleNavbar}
-            className="mr-2" />
+            className="mr-2 toggler-icon">
+        </NavbarToggler>
+          
         <Collapse isOpen={!collapsed} navbar>
           
             <Nav navbar>
