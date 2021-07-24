@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const GroceryListCreate = (props) => {
     const [ingredient, setIngredient] = useState('');
@@ -8,7 +9,7 @@ const GroceryListCreate = (props) => {
     const handleSubmit = (e) => {
         //e.preventDefault();
         console.log("Hey you work?")
-        fetch('http://localhost:3000/grocery/', {
+        fetch(`${APIURL}/grocery/`, {
             method: 'POST',
             body: JSON.stringify({grocery: {ingredient: ingredient, quantity: quantity}}),
             headers: new Headers ({
