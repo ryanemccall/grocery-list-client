@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import APIURL from '../helpers/environment';
-// import { Spinner } from 'reactstrap';
+import { Spinner } from 'reactstrap';
 
 
 //login and signup forms contain the same info, but differ in their titles and the action they initiate with server when a successful user account is made.
@@ -10,16 +10,6 @@ const Signup = (props) => {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    // const awaitUserCreate = () => {
-    //     return (
-    //         <div>
-    //         <Spinner
-    //             size="sm"
-    //                 color="primary" />
-    //             </div>
-    //         ) 
-    // }
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -94,6 +84,18 @@ const Signup = (props) => {
                     type="submit"
                     className="btn-auth"
                 > Sign Up </Button>
+                
+                 <div id="signupSpinnerDiv">
+                <br></br>
+                    <Spinner
+                    id="loginSpinner"
+                    color="#EBD569"
+                    type="border"
+                    role="status"
+                    size="md">
+                    <span class="visually-hidden">Loading...</span>
+                </Spinner>
+                </div>
             </Form>
             <br>
             </br>

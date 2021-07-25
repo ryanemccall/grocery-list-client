@@ -143,3 +143,12 @@ cursor: wait;
 .btn-auth:hover {
 box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
+
+#loginSpinner, #signupSpinner {
+  color: #EBD569!important;
+  display: none;
+}
+
+/* #loginSpinnerDiv, #signupSpinnerDiv {
+display: none;
+} */

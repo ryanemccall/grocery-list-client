@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Spinner } from 'reactstrap';
 import APIURL from '../helpers/environment';
 
 const Login = (props) => {
@@ -9,8 +9,13 @@ const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const displayLoginSpinner = () => {
+        document.getElementById("loginSpinner").style.display = "block";
+    }
+    
     const handleSubmit = (event) => {
         event.preventDefault();
+        displayLoginSpinner();
         //if (username !== " " && password !== " ") {
         fetch(`${APIURL}/user/login`, {
             method: "POST",
@@ -75,8 +80,22 @@ const Login = (props) => {
             </br>
                 <Button
                     className="btn-auth"
-                    type="submit"> Get Cookin
+                    type="submit"
+                    onClick={displayLoginSpinner}
+                > Get Cookin
                 </Button>
+               
+                <div id="loginSpinnerDiv">
+                <br></br>
+                    <Spinner
+                    id="loginSpinner"
+                    color="#EBD569"
+                    type="border"
+                    role="status"
+                    size="md">
+                    <span class="visually-hidden">Loading...</span>
+                </Spinner>
+                </div>
             </Form>
             <br>
             </br>
