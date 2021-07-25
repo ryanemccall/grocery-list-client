@@ -29,7 +29,9 @@ const GroceryListUpdate = (props) => {
              }, [props.token, props.groceryList])
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
-        <Modal isOpen={true}>
+        <Modal isOpen={true}
+            //Ryan this didnt work prob bc reactstrap wins
+        style={{backgroundColor:"#82c787"}}>
             <ModalHeader>Update Ingredient and Quantity</ModalHeader>
             <ModalBody>
                 <Form onSubmit={groceryListEdit}>
@@ -41,8 +43,10 @@ const GroceryListUpdate = (props) => {
                     <FormGroup>
                     <Label htmlFor="quantity" />
                     <Input name="quantity" value={editQuantity} onChange={(e) => setEditQuantity(e.target.value)}/>
-                </FormGroup>
-                <Button type="submit">Update</Button>
+                    </FormGroup>
+                    <br></br>
+                    <Button type="submit"
+                    style={{backgroundColor:"#82c787"}}>Update</Button>
                 </Form>
             </ModalBody>
         </Modal>

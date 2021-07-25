@@ -75,7 +75,7 @@ const Signup = (props) => {
                         className="form-label"
                         htmlFor="password">Password</Label>
                     <Input
-                        placeholder="make it strong, spicy, and at least 6 characters"
+                        placeholder="make it strong, spicy, and 6 characters or more"
                         type="text"
                         name="password"
                         aria-required="true"
