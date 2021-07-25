@@ -53,7 +53,8 @@ const GroceryListIndex = (props) => {
     return (
         <Container>
             <Row>
-                 <Col md={{ size: 4, order: 1, offset: 1}}>
+                {/* //ryan i increased size from 4 to 7 and it jumps less */}
+                 <Col md={{ size: 7, order: 1, offset: 1}}>
                     <GroceryListCreate fetchGroceryList={fetchGroceryList} token={props.token}/> 
                 </Col>
                 <Col md={{ size: 8, order: 2, offset: 2}}>
