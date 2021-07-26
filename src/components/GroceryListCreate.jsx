@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useForm } from "react-hook-form"
 import APIURL from '../helpers/environment';
 
 const GroceryListCreate = (props) => {
@@ -27,8 +28,7 @@ const GroceryListCreate = (props) => {
 
     return (
         
-            <div className="container">
-           
+        <div className="container">
             <h2>Add to Grocery List</h2>
             
             <p>
@@ -64,10 +64,12 @@ const GroceryListCreate = (props) => {
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
+
                 <br></br>
+
                 <Button id="submitBtn" size="md" type="submit">Add to List</Button>
-                </Form>
-                 </div>
+            </Form>
+        </div>
         
     );
 }
