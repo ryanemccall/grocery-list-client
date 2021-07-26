@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { useForm } from "react-hook-form"
 import APIURL from '../helpers/environment';
 
 const GroceryListCreate = (props) => {
     const [ingredient, setIngredient] = useState('');
-    const [quantity, setQuantity] = useState();
+    const [quantity, setQuantity] = useState(1);
 
     const handleSubmit = (e) => {
-        //e.preventDefault();
+        e.preventDefault();
         console.log("Hey you work?")
         fetch(`${APIURL}/grocery/`, {
             method: 'POST',
@@ -21,7 +20,7 @@ const GroceryListCreate = (props) => {
         .then((groceriesData) => {
             console.log('GROCERIES DATA '+ groceriesData);
             setIngredient('');
-            setQuantity();
+            setQuantity(1);
             props.fetchGroceryList(); 
         })
     }
@@ -58,6 +57,7 @@ const GroceryListCreate = (props) => {
                     <br></br>
                     <Input
                         type="number"
+                        placeholder="1"
                         name="quantity"
                         min="1"
                         required
