@@ -143,6 +143,25 @@ cursor: wait;
 box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
+
+/* Adding styling to the Update Modal --Ryan */
+.modalBody {
+  background-color: #EBD569;
+}
+
+.modalHeader {
+  background-color: #82c787;
+  font-size: larger;
+  justify-content: center;
+  
+  color: white;
+}
+
+.modalLabel {
+  color: #AC663E
+  
+}
+
 #loginSpinner, #signupSpinner {
   color: #EBD569!important;
   display: none;
@@ -151,3 +170,4 @@ box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
 /* #loginSpinnerDiv, #signupSpinnerDiv {
 display: none;
 } */
+

@@ -7,6 +7,7 @@ import ValidateSession from './auth/ValidateSession';
 import GroceryListIndex from "./components/GroceryListIndex";
 import Navigation from './site/Navbar';
 import SiteFooter from './site/Footer';
+//import groceryAPI from "./API/groceryAPI"
 
 //app call
 
