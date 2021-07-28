@@ -26,14 +26,13 @@ const GroceryListCreate = (props) => {
     }
 
     return (
-        <>
+        
             <div className="container">
            
             <h2>Add to Grocery List</h2>
             
             <p>
-                    Is it a milk and eggs kind of trip or chocolate and red wine?
-                    <br></br>Just tell Listo what you need and it will create a grocery list for you.
+                    Is it a milk and eggs kind of trip or chocolate and red wine?  Just tell Listo what you need and it will create a grocery list for you.
                     <br></br>
                     <br></br>
             </p>
@@ -66,10 +65,10 @@ const GroceryListCreate = (props) => {
                         onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
                 <br></br>
-                <Button id="submitBtn" size="lg" type="submit">Add to List</Button>
+                <Button id="submitBtn" size="md" type="submit">Add to List</Button>
                 </Form>
                  </div>
-        </>
+        
     );
 }
 

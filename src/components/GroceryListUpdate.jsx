@@ -29,6 +29,7 @@ const GroceryListUpdate = (props) => {
              }, [props.token, props.groceryList])
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
+
         <Modal isOpen={true}>
             <ModalHeader className="modalHeader">Update Your List!</ModalHeader>
             <ModalBody className="modalBody">
@@ -41,8 +42,10 @@ const GroceryListUpdate = (props) => {
                     <FormGroup>
                     <Label className="modalLabel" htmlFor="quantity">Quantity:</Label>
                     <Input name="quantity" value={editQuantity} onChange={(e) => setEditQuantity(e.target.value)}/>
-                </FormGroup>
-                <Button type="submit">Update</Button>
+                    </FormGroup>
+                    <br></br>
+                    <Button type="submit"
+                    style={{backgroundColor:"#82c787"}}>Update</Button>
                 </Form>
             </ModalBody>
         </Modal>

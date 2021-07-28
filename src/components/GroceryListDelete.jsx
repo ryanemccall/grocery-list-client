@@ -23,17 +23,24 @@ const GroceryListDelete = (props) => {
 
             return props.groceryList.map((listo, index) => {
                 return (
-                    <tr key={index}>
-                        <th scope="row">{listo.id}</th>
+                    <tr key={listo.id}>
+                        <th scope="row"
+                            //here is where i changed display to none
+                            style={{ display: "none" }}
+                            >
+                            {listo.id}</th>
                         <td>{listo.ingredient}</td>
                         <td>{listo.quantity}</td>
                         <td>
                             <Button
-                                id="btn-update"
-                                onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
+                                className="btn-update"
+                                onClick={() => {
+                                    props.editGroceryList(listo);
+                                    props.updateOn()
+                                }}>Update</Button>
                             
                             <Button
-                                id="btn-delete"
+                                className="btn-delete"
                                 outline onClick={() => { deleteGroceryList(listo) }}>Remove</Button>
                         </td>
                     </tr>
@@ -48,8 +55,9 @@ const GroceryListDelete = (props) => {
         <hr />
         <Table hover striped>
             <thead>
-                <tr>
-                    <th>#</th>
+                    <tr>
+                         {/* here is where i changed display to none */}
+                    <th style={{display:"none"}}>#</th>
                     <th>Ingredient</th>
                     <th>Quantity</th>
                 </tr>
