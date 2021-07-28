@@ -9,7 +9,7 @@ import {
     NavLink,
     Button
 } from 'reactstrap';
-import GroceryListGet from '../components/GroceryListGet';
+//import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
     const [collapsed, setCollapsed] = useState(true);
@@ -36,6 +36,12 @@ const Navigation = (props) => {
                 <Button
                   style={{ marginLeft: "1em" }}
                   onClick={props.GroceryListGet}>Grocery Lists</Button>
+            </NavItem>
+            <br></br>
+            <NavItem>
+                <Button
+                  style={{ marginLeft: "1em" }}
+                  onClick={props.groceryAPI}>Search Recipes!</Button>
             </NavItem>
           </Nav>
         </Collapse>

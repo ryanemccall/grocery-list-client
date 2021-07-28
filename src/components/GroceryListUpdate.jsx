@@ -30,16 +30,16 @@ const GroceryListUpdate = (props) => {
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Update Ingredient and Quantity</ModalHeader>
-            <ModalBody>
+            <ModalHeader className="modalHeader">Update Your List!</ModalHeader>
+            <ModalBody className="modalBody">
                 <Form onSubmit={groceryListEdit}>
                     <FormGroup>
-                        <Label htmlFor="ingredient" />
+                        <Label className="modalLabel" htmlFor="ingredient">Ingredient:</Label>
                         <Input name="ingredient" value={editIngredient} onChange={(e) => setEditIngredient(e.target.value)}/>
                     </FormGroup>
 
                     <FormGroup>
-                    <Label htmlFor="quantity" />
+                    <Label className="modalLabel" htmlFor="quantity">Quantity:</Label>
                     <Input name="quantity" value={editQuantity} onChange={(e) => setEditQuantity(e.target.value)}/>
                 </FormGroup>
                 <Button type="submit">Update</Button>

@@ -129,3 +129,21 @@ cursor: wait;
 .btn-auth:hover {
 box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
+
+/* Adding styling to the Update Modal --Ryan */
+.modalBody {
+  background-color: #EBD569;
+}
+
+.modalHeader {
+  background-color: #82c787;
+  font-size: larger;
+  justify-content: center;
+  
+  color: white;
+}
+
+.modalLabel {
+  color: #AC663E
+  
+}
