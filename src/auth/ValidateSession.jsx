@@ -20,7 +20,7 @@ const ValidateSession = (props) => {
                         updateToken={props.updateToken}
                     />
                 </Col>
-            </Row>
+                </Row>
             </Container>
             </div>
     );

@@ -23,7 +23,7 @@ const GroceryListDelete = (props) => {
 
             return props.groceryList.map((listo, index) => {
                 return (
-                    <tr key={index}>
+                    <tr key={listo.id}>
                         <th scope="row"
                             //here is where i changed display to none
                             style={{ display: "none" }}
@@ -34,7 +34,10 @@ const GroceryListDelete = (props) => {
                         <td>
                             <Button
                                 className="btn-update"
-                                onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
+                                onClick={() => {
+                                    props.editGroceryList(listo);
+                                    props.updateOn()
+                                }}>Update</Button>
                             
                             <Button
                                 className="btn-delete"
