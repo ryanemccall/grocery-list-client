@@ -9,7 +9,8 @@ const GroceryListUpdate = (props) => {
    
     const groceryListEdit = (e, groceryList) => {
         console.log(groceryList);
-        // e.preventDefault(); 
+        e.preventDefault();
+        console.log(`UPDATED ID???? ${props.groceryListToUpdate.id}`);
         fetch(`${APIURL}/grocery/update/${props.groceryListToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({grocery: {ingredient: editIngredient, quantity: editQuantity}}),
