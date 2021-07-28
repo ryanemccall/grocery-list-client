@@ -11,8 +11,17 @@ const Signup = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
+    const displaySignupSpinner = () => {
+        document.getElementById("signupSpinner").style.display = "block";
+    }
+    
+    const hideSignupSpinner = () => {
+        document.getElementById("signupSpinner").style.display = "none";
+    }
+    
     const handleSubmit = (event) => {
         event.preventDefault();
+        displaySignupSpinner();
             fetch(`${APIURL}/user/signup`, {
                 method: "POST", 
                 body: JSON.stringify(
@@ -27,6 +36,7 @@ const Signup = (props) => {
                     //display to user the server's response
                     //then update the token
                     window.alert(data.message);
+                    hideSignupSpinner();
                     //takes the session token from the response and passes it to the updatetoken object IF a sessionToken exists
                     if (data.sessionToken) {
                     //we can do this bc updateToken is defined in app.js
@@ -80,7 +90,6 @@ const Signup = (props) => {
              <br>
             </br>
                 <Button
-                    // onClick={awaitUserCreate}
                     type="submit"
                     className="btn-auth"
                 > Sign Up </Button>
@@ -88,7 +97,7 @@ const Signup = (props) => {
                  <div id="signupSpinnerDiv">
                 <br></br>
                     <Spinner
-                    id="loginSpinner"
+                    id="signupSpinner"
                     color="#EBD569"
                     type="border"
                     role="status"

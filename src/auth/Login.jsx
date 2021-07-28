@@ -12,6 +12,10 @@ const Login = (props) => {
     const displayLoginSpinner = () => {
         document.getElementById("loginSpinner").style.display = "block";
     }
+
+     const hideLoginSpinner = () => {
+        document.getElementById("loginSpinner").style.display = "none";
+    }
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,6 +35,7 @@ const Login = (props) => {
             {
                 //displays what message the server has programmed
                 window.alert(data.message);
+                hideLoginSpinner();
                 if (data.sessionToken) {
                 props.updateToken(data.sessionToken);
                 }
