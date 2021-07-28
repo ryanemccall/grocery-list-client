@@ -20,14 +20,26 @@ const GroceryListIndex = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }).then( data => data.json())
+        }
+        ).then( data => data.json())
         .then( results => {
+            // Let's alphabetize!
+            results.sort(function(a, b) {
+                let ingrA = a.ingredient.toUpperCase(); // ignore upper and lowercase for more realistic sorting. Considering a locale sort for diacriticals
+                let ingrB = b.ingredient.toUpperCase(); 
+                if (ingrA < ingrB) {
+                    return -1;
+                }
+                if (ingrA > ingrB) {
+                    return 1;
+                }
+                // ingredient names are equal
+                return 0;
+            });
             setGroceryList(results);
-            console.log(results);
         })
         .catch(console.error);
     };
-   
     const editGroceryList = (listo) => {
         setGroceryListToUpdate(listo);
         console.log(listo);

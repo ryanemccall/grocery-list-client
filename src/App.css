@@ -91,7 +91,17 @@ color: white!important;
 
 .btn-update {
 background-color: #82c787;
+color: white!important;
 }
+
+
+.btn-update:focus {
+  /* outline: none; */
+  background-color: #82c787;
+  box-shadow: none;
+}
+
+
 
 /* NAV */
 

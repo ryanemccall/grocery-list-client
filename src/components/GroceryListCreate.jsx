@@ -4,10 +4,10 @@ import APIURL from '../helpers/environment';
 
 const GroceryListCreate = (props) => {
     const [ingredient, setIngredient] = useState('');
-    const [quantity, setQuantity] = useState();
+    const [quantity, setQuantity] = useState(1);
 
     const handleSubmit = (e) => {
-        //e.preventDefault();
+        e.preventDefault();
         console.log("Hey you work?")
         fetch(`${APIURL}/grocery/`, {
             method: 'POST',
@@ -20,15 +20,14 @@ const GroceryListCreate = (props) => {
         .then((groceriesData) => {
             console.log('GROCERIES DATA '+ groceriesData);
             setIngredient('');
-            setQuantity();
+            setQuantity(1);
             props.fetchGroceryList(); 
         })
     }
 
     return (
         
-            <div className="container">
-           
+        <div className="container">
             <h2>Add to Grocery List</h2>
             
             <p>
@@ -58,16 +57,19 @@ const GroceryListCreate = (props) => {
                     <br></br>
                     <Input
                         type="number"
+                        placeholder="1"
                         name="quantity"
                         min="1"
                         required
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)} />
                 </FormGroup>
+
                 <br></br>
+
                 <Button id="submitBtn" size="md" type="submit">Add to List</Button>
-                </Form>
-                 </div>
+            </Form>
+        </div>
         
     );
 }

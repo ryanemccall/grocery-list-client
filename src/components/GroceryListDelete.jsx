@@ -34,10 +34,7 @@ const GroceryListDelete = (props) => {
                         <td>
                             <Button
                                 className="btn-update"
-                                onClick={() => {
-                                    props.editGroceryList(listo);
-                                    props.updateOn()
-                                }}>Update</Button>
+                                outline onClick={() => { props.editGroceryList(listo); props.updateOn() }}>Update</Button>
                             
                             <Button
                                 className="btn-delete"
