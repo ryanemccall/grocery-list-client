@@ -1,3 +1,5 @@
+/* GLOBAL /APP */
+
 .App {
   font-family: 'Open Sans', sans-serif;
 } 
@@ -5,7 +7,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  padding: .5em;
+  padding: .7em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,39 +37,30 @@
   }
 }
 
-.mr-auto {
-margin-left: .5em!important;
-padding: .5em;
-color: white!important;
-font-family: 'Belleza', sans-serif;
-}
-
-.form-label{
-padding: .3em;
-}
-
-h1, h2 {
-font-family: 'Belleza', sans-serif;
-}
-
 .container {
 background-color: #82c787;
-/* width: 100%!important;  RYAN: This was the original code but it has whitespace I changed it to Max-Width to get to have the green all the way across */
 max-width: 100%;
 padding: 1em;
 margin: auto;
 color: white;
 }
 
-.nav-container {
-background-color: #AC663E;
+h1, h2 {
+font-family: 'Belleza', sans-serif;
 }
 
+/* FORMS */
+.form-label{
+padding: .3em;
+}
+
+/*FOOTER*/
 .footer {
 text-align:center;
 justify-content: center;
 }
 
+/* TABLE */
 thead {
 font-family: "Belleza", sans-serif;
 }
@@ -87,18 +80,48 @@ margin-bottom: .5em;
   background-color: #AC663E;
 }
 
-#btn-delete, #btn-update {
+.btn-delete, .btn-update {
 margin: .2em;
 }
 
-#btn-delete {
+.btn-delete {
 background-color: #AC663E;
 color: white!important;
 }
 
-#btn-update {
+.btn-update {
 background-color: #82c787;
+color: white!important;
 }
+
+
+.btn-update:focus {
+  /* outline: none; */
+  background-color: #82c787;
+  box-shadow: none;
+}
+
+
+
+/* NAV */
+
+.nav-container {
+background-color: #AC663E;
+}
+
+/*navbar brand div*/
+.mr-auto {
+margin-left: .5em!important;
+padding: .5em;
+color: white!important;
+font-family: 'Belleza', sans-serif;
+}
+
+/* hamburger*/
+.mr-2, .navbar-toggler {
+margin-right: .5em;
+}
+/* nav btns */
 
 .btn-nav {
   margin-left: 1em; 
@@ -106,7 +129,7 @@ background-color: #82c787;
   border-color: #EBD569;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: .4em;
-transition:none;
+  transition:none;
 }
 
 .btn-nav:visited {
@@ -129,3 +152,32 @@ cursor: wait;
 .btn-auth:hover {
 box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Adding styling to the Update Modal --Ryan */
+.modalBody {
+  background-color: #EBD569;
+}
+
+.modalHeader {
+  background-color: #82c787;
+  font-size: larger;
+  justify-content: center;
+  
+  color: white;
+}
+
+.modalLabel {
+  color: #AC663E
+  
+}
+
+#loginSpinner, #signupSpinner {
+  color: #EBD569!important;
+  display: none;
+}
+
+/* #loginSpinnerDiv, #signupSpinnerDiv {
+display: none;
+} */
+

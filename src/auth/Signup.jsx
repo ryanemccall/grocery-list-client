@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import APIURL from '../helpers/environment';
-// import { Spinner } from 'reactstrap';
+import { Spinner } from 'reactstrap';
 
 
 //login and signup forms contain the same info, but differ in their titles and the action they initiate with server when a successful user account is made.
@@ -10,19 +10,18 @@ const Signup = (props) => {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    // const awaitUserCreate = () => {
-    //     return (
-    //         <div>
-    //         <Spinner
-    //             size="sm"
-    //                 color="primary" />
-    //             </div>
-    //         ) 
-    // }
+    
+    const displaySignupSpinner = () => {
+        document.getElementById("signupSpinner").style.display = "block";
+    }
+    
+    const hideSignupSpinner = () => {
+        document.getElementById("signupSpinner").style.display = "none";
+    }
     
     const handleSubmit = (event) => {
         event.preventDefault();
+        displaySignupSpinner();
             fetch(`${APIURL}/user/signup`, {
                 method: "POST", 
                 body: JSON.stringify(
@@ -37,6 +36,7 @@ const Signup = (props) => {
                     //display to user the server's response
                     //then update the token
                     window.alert(data.message);
+                    hideSignupSpinner();
                     //takes the session token from the response and passes it to the updatetoken object IF a sessionToken exists
                     if (data.sessionToken) {
                     //we can do this bc updateToken is defined in app.js
@@ -75,7 +75,7 @@ const Signup = (props) => {
                         className="form-label"
                         htmlFor="password">Password</Label>
                     <Input
-                        placeholder="make it strong, spicy, and at least 6 characters"
+                        placeholder="make it strong, spicy, and 6 characters or more"
                         type="text"
                         name="password"
                         aria-required="true"
@@ -90,10 +90,21 @@ const Signup = (props) => {
              <br>
             </br>
                 <Button
-                    // onClick={awaitUserCreate}
                     type="submit"
                     className="btn-auth"
                 > Sign Up </Button>
+                
+                 <div id="signupSpinnerDiv">
+                <br></br>
+                    <Spinner
+                    id="signupSpinner"
+                    color="#EBD569"
+                    type="border"
+                    role="status"
+                    size="md">
+                    <span class="visually-hidden">Loading...</span>
+                </Spinner>
+                </div>
             </Form>
             <br>
             </br>

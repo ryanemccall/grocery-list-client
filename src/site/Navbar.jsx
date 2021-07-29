@@ -9,8 +9,7 @@ import {
     NavLink,
     Button
 } from 'reactstrap';
-
-import GroceryListGet from '../components/GroceryListGet';
+//import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
     const [collapsed, setCollapsed] = useState(true);
@@ -20,39 +19,26 @@ const Navigation = (props) => {
     return (
 
  <div class="nav-container">
-        <Navbar dark>
-          
-          <NavbarBrand
+      <Navbar light>
+                <NavbarBrand
                     href="/"
-            className="mr-auto"
-            img src="./assets/logos/bake-white.png">
-            LISTO
-          </NavbarBrand>
-          
-        <NavbarToggler
-            onClick={toggleNavbar}
-            className="mr-2" />
+                    className="mr-auto">LISTO</NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
-          
-            <Nav navbar>
-              
-              <NavItem>
-                <Button
-                  className="btn-nav"
-                  onClick={props.clickLogout}>Logout
-                </Button>
-            </NavItem>
-              
+          <Nav navbar>
             <NavItem>
                 <Button
-                  className="btn-nav"
-                  onClick={props.GroceryListGet}>My Grocery Lists</Button>
-              </NavItem>
-              
-            </Nav>
-            
-          </Collapse>
-          
+                  style={{ marginLeft: "1em" }}
+                  onClick={props.clickLogout}>Logout</Button>
+                        </NavItem>
+                        <br></br>
+            <NavItem>
+                <Button
+                  style={{ marginLeft: "1em" }}
+                  onClick={props.GroceryListGet}>Grocery Lists</Button>
+            </NavItem>
+          </Nav>
+        </Collapse>
       </Navbar>
     </div>
     )

@@ -6,10 +6,13 @@ const GroceryListUpdate = (props) => {
     console.log(props)
     const [editIngredient, setEditIngredient] = useState(props.groceryListToUpdate.ingredient);
     const [editQuantity, setEditQuantity] = useState(props.groceryListToUpdate.quantity);
+
+    const toggle = props.updateOff;
    
     const groceryListEdit = (e, groceryList) => {
         console.log(groceryList);
-        // e.preventDefault(); 
+        e.preventDefault();
+        console.log(`UPDATED ID???? ${props.groceryListToUpdate.id}`);
         fetch(`${APIURL}/grocery/update/${props.groceryListToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({grocery: {ingredient: editIngredient, quantity: editQuantity}}),
@@ -29,20 +32,25 @@ const GroceryListUpdate = (props) => {
              }, [props.token, props.groceryList])
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
-        <Modal isOpen={true}>
-            <ModalHeader>Update Ingredient and Quantity</ModalHeader>
-            <ModalBody>
+
+        <Modal isOpen={true} toggle={toggle}>
+            <ModalHeader className="modalHeader">Update Your List!</ModalHeader>
+            <ModalBody className="modalBody">
                 <Form onSubmit={groceryListEdit}>
                     <FormGroup>
-                        <Label htmlFor="ingredient" />
+                        <Label className="modalLabel" htmlFor="ingredient">Ingredient:</Label>
                         <Input name="ingredient" value={editIngredient} onChange={(e) => setEditIngredient(e.target.value)}/>
                     </FormGroup>
 
                     <FormGroup>
-                    <Label htmlFor="quantity" />
+                    <Label className="modalLabel" htmlFor="quantity">Quantity:</Label>
                     <Input name="quantity" value={editQuantity} onChange={(e) => setEditQuantity(e.target.value)}/>
-                </FormGroup>
-                <Button type="submit">Update</Button>
+                    </FormGroup>
+                    <br></br>
+                    <Button type="submit"
+                    style={{backgroundColor:"#82c787", margin:"3px"}}>Update</Button>
+                    <Button 
+                    style={{backgroundColor:"#AC663E"}} onClick={toggle}>Cancel</Button>
                 </Form>
             </ModalBody>
         </Modal>
