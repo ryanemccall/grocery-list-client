@@ -37,12 +37,6 @@ const Navigation = (props) => {
                   style={{ marginLeft: "1em" }}
                   onClick={props.GroceryListGet}>Grocery Lists</Button>
             </NavItem>
-            <br></br>
-            <NavItem>
-                <Button
-                  style={{ marginLeft: "1em" }}
-                  onClick={props.groceryAPI}>Search Recipes!</Button>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

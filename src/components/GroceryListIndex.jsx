@@ -6,11 +6,13 @@ import GroceryListCreate from "./GroceryListCreate";
 import APIURL from '../helpers/environment'
 //import GroceryListGet from "./GroceryListGet";
 
+
 const GroceryListIndex = (props) => {
     const [groceryList, setGroceryList] = useState([]);
     const [updatePop, setUpdatePop] = useState(false);
     const [groceryListToUpdate, setGroceryListToUpdate] = useState({});
     const [groceryListToDelete, setGroceryListToDelete] = useState({});
+    
     
 
     const fetchGroceryList = () => {

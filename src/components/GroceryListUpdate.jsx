@@ -6,6 +6,8 @@ const GroceryListUpdate = (props) => {
     console.log(props)
     const [editIngredient, setEditIngredient] = useState(props.groceryListToUpdate.ingredient);
     const [editQuantity, setEditQuantity] = useState(props.groceryListToUpdate.quantity);
+
+    const toggle = props.updateOff;
    
     const groceryListEdit = (e, groceryList) => {
         console.log(groceryList);
@@ -31,7 +33,7 @@ const GroceryListUpdate = (props) => {
     //NOTE: In Order to Add Options (Tbs, Cup, Lbs, etc.) we Likely need to add it as something stored on the Server
     return (
 
-        <Modal isOpen={true}>
+        <Modal isOpen={true} toggle={toggle}>
             <ModalHeader className="modalHeader">Update Your List!</ModalHeader>
             <ModalBody className="modalBody">
                 <Form onSubmit={groceryListEdit}>
@@ -46,7 +48,9 @@ const GroceryListUpdate = (props) => {
                     </FormGroup>
                     <br></br>
                     <Button type="submit"
-                    style={{backgroundColor:"#82c787"}}>Update</Button>
+                    style={{backgroundColor:"#82c787", margin:"3px"}}>Update</Button>
+                    <Button 
+                    style={{backgroundColor:"#AC663E"}} onClick={toggle}>Cancel</Button>
                 </Form>
             </ModalBody>
         </Modal>

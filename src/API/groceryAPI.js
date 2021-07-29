@@ -7,9 +7,9 @@
 // const type  = "public";
 
 
-// const GroceryListApp = () => {
+// const GroceryListApp = (props) => {
 //     const [ search, setSearch] = useState('');
-//     const [ results, setResults] = useState([]);
+//     //const [ results, setResults] = useState([]); MOVING THIS TO INDEX TO SEND BACK AS A PROP
 
 //     const fetchResults = () => {
 //         let url = `${baseURL}?type=${type}&q=${search}&app_id=${app_id}&app_key=${key}`;
@@ -34,7 +34,7 @@
 //                     <button>Get Recipes!</button>
 //                 </form>
 //                 {
-//                     results.length > 0 ? <groceryResults results={results} /> : null
+//                     props.APIResults.length > 0 ? <groceryResults APIResults={APIResults} /> : null
 //                 }
 //             </div>
 //         </div>
